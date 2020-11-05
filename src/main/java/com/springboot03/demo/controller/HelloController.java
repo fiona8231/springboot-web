@@ -22,5 +22,10 @@ public class HelloController {
         return "success";
     }
 
+    @RequestMapping({"/","/index"})
+    public String index(){
+        return "index";
+    }
+
 
 }

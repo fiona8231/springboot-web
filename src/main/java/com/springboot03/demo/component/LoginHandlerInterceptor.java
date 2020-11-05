@@ -1,4 +1,4 @@
-package com.atguigu.springboot.component;
+package com.springboot03.demo.component;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;

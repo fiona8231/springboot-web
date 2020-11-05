@@ -1,4 +1,4 @@
-package com.atguigu.springboot.entities;
+package com.springboot03.demo.entities;
 
 public class Department {
 

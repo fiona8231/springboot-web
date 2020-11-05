@@ -1,4 +1,4 @@
-package com.atguigu.springboot.controller;
+package com.springboot03.demo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
@@ -27,7 +27,7 @@ public class LoginController {
             //登陆失败
 
             map.put("msg","用户名密码错误");
-            return  "login";
+            return "login";
         }
 
     }

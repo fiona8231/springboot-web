@@ -1,4 +1,4 @@
-package com.atguigu.springboot.component;
+package com.springboot03.demo.component;
 
 import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.LocaleResolver;

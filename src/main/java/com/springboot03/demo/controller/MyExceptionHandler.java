@@ -1,6 +1,7 @@
-package com.atguigu.springboot.controller;
+package com.springboot03.demo.controller;
 
-import com.atguigu.springboot.exception.UserNotExistException;
+
+import com.springboot03.demo.exception.UserNotExistException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;

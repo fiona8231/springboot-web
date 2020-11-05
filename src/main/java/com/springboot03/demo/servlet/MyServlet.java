@@ -1,4 +1,4 @@
-package com.atguigu.springboot.servlet;
+package com.springboot03.demo.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

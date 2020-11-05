@@ -1,9 +1,10 @@
-package com.atguigu.springboot.controller;
+package com.springboot03.demo.controller;
 
-import com.atguigu.springboot.dao.DepartmentDao;
-import com.atguigu.springboot.dao.EmployeeDao;
-import com.atguigu.springboot.entities.Department;
-import com.atguigu.springboot.entities.Employee;
+
+import com.springboot03.demo.dao.DepartmentDao;
+import com.springboot03.demo.dao.EmployeeDao;
+import com.springboot03.demo.entities.Department;
+import com.springboot03.demo.entities.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

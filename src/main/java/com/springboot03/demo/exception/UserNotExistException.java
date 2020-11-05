@@ -1,4 +1,4 @@
-package com.atguigu.springboot.exception;
+package com.springboot03.demo.exception;
 
 public class UserNotExistException extends RuntimeException {
 

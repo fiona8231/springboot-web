@@ -1,10 +1,11 @@
-package com.atguigu.springboot.dao;
+package com.springboot03.demo.dao;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.atguigu.springboot.entities.Department;
+
+import com.springboot03.demo.entities.Department;
 import org.springframework.stereotype.Repository;
 
 
