@@ -18,6 +18,10 @@ public class EmployeeController {
 
     @Autowired
     EmployeeDao employeeDao;
+
+    @Autowired
+    DepartmentDao departmentDao;
+
     //direct to list page
     @GetMapping("/emps")
     public String list(Model model){
@@ -28,5 +32,13 @@ public class EmployeeController {
         return "emp/list";
     }
 
+    //forward to addingpage
+    @GetMapping("/emp")
+    public String toAddPage(Model model){
+
+        Collection<Department> departments = departmentDao.getDepartments();
+        model.addAttribute("depts", departments);
+        return "emp/add";
+    }
 
 }
