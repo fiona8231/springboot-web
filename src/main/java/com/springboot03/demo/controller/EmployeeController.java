@@ -23,7 +23,7 @@ public class EmployeeController {
     public String list(Model model){
 
         Collection<Employee> employees = employeeDao.getAll();
-        model.addAttribute("emps", employees);
+        model.addAttribute("myemps", employees);
 
         return "emp/list";
     }
