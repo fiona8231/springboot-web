@@ -61,8 +61,21 @@ public class EmployeeController {
         model.addAttribute("depts", depts);
 
        //回到【添加】页面，添加页面和修改公用一个
-        employeeDao.save(e);
+       // employeeDao.save(e);
         return "/emp/add";
     }
+    @PutMapping("/emp")
+    public String modify(Employee e){
+         employeeDao.save(e);
+         return "redirect:/emps";
+    }
+
+    @DeleteMapping("/emp/{id}")
+    public String delete(@PathVariable("id") Integer myid){
+            employeeDao.delete(myid);
+            return "redirect:/emps";
+    }
+
+
 
 }

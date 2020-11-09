@@ -84,28 +84,41 @@
 								  <td th:text="${#dates.format(emp.birth, 'dd-MMM-yyyy HH:mm')}"></td>
 							     <td>
 								  <a class="btn btn-sm btn-primary" th:href="@{/emp/}+${emp.id}">Modify</a>
-								  <button class="btn btn-sm btn-danger">Delete</button>
+									 <button th:attr="uri=@{/emp/}+${emp.id}" class="btn btn-sm btn-danger deleteBtn">Delete</button>
+
 							     </td>
 							  </tr>
 							</tbody>
 						</table>
 					</div>
 				</main>
+				 <form id="mydeleteEmpfomr" th:action="@{/emp/}+${emp.id}" method="post">
+					<input type="hidden" name="_method" value="delete"/>
+				 </form>
 			</div>
 		</div>
 
 		<!-- Bootstrap core JavaScript
     ================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
-		<script type="text/javascript" src="asserts/js/jquery-3.2.1.slim.min.js"></script>
-		<script type="text/javascript" src="asserts/js/popper.min.js"></script>
+		<script type="text/javascript" src="asserts/js/jquery-3.2.1.slim.min.js" th:src="@{/webjars/jquery/3.2.1/jquery.js}"></script>
+		<script type="text/javascript" src="asserts/js/popper.min.js" th:src="@{/webjars/popper.js/1.14.3/popper.js}"></script>
 		<script type="text/javascript" src="asserts/js/bootstrap.min.js"></script>
 
+
 		<!-- Icons -->
-		<script type="text/javascript" src="asserts/js/feather.min.js"></script>
+		<script type="text/javascript" src="asserts/js/feather.min.js"  th:src="@{/asserts/img/bootstrap-solid.svg}"></script>
 		<script>
 			feather.replace()
 		</script>
+
+
+	   <script>
+		   $(".deleteBtn").click(function(){
+			   $("#mydeleteEmpfomr").attr("action",$(this).attr("uri")).submit();
+			   return false;
+		   });
+	   </script>
 
 		<!-- Graphs -->
 		<script type="text/javascript" src="asserts/js/Chart.min.js"></script>
