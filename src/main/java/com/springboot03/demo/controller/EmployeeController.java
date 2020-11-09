@@ -41,4 +41,28 @@ public class EmployeeController {
         return "emp/add";
     }
 
+    //add employee
+    @PostMapping("/emp")
+    public String addEmp(Employee employee){
+
+      employeeDao.save(employee);
+
+      //点击add后，来到list页面
+      //不能返回到模板引擎，需要重定向
+      return "redirect:/emps";
+    }
+
+    //来到修改页面，先查出当前员工，然后回显
+    @GetMapping("/emp/{id}")
+    public String EditPage(@PathVariable("id") Integer id, Model model){
+       Employee e = employeeDao.get(id);
+        Collection<Department> depts = departmentDao.getDepartments();
+        model.addAttribute("e", e);
+        model.addAttribute("depts", depts);
+
+       //回到【添加】页面，添加页面和修改公用一个
+        employeeDao.save(e);
+        return "/emp/add";
+    }
+
 }

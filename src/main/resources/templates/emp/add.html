@@ -62,24 +62,27 @@
 
 					<h2><a class="btn-sm btn-success" href="/emp" th:href="@{/emp}">Add Employee</a></h2>
 
-					<input type="hidden" name="_method" value="put" th:if="${emp!=null}"/>
-					<input type="hidden" name="id" th:if="${emp!=null}" th:value="${emp.id}">
-					<div class="form-group">
+					<form th:action="@{/emp}" method="post">
+						<!-- PUT Method -->
+						<input type="hidden" name="_method" value="put" th:if="${e!=null}"/>
+						<input type="hidden" name="id" th:if="${e!=null}" th:value="${e.id}">
+
+						<div class="form-group">
 						<label>LastName</label>
-						<input name="lastName" type="text" class="form-control" placeholder="zhangsan" th:value="${emp!=null}?${emp.lastName}">
+						<input name="lastName" type="text" class="form-control" placeholder="Name" th:value="${e!=null}?${e.lastName}" >
 					</div>
 					<div class="form-group">
 						<label>Email</label>
-						<input name="email" type="email" class="form-control" placeholder="zhangsan@atguigu.com" th:value="${emp!=null}?${emp.email}">
+						<input name="email" type="email" class="form-control" placeholder="zhangsan@atguigu.com" th:value="${e!=null}?${e.email}" >
 					</div>
 					<div class="form-group">
 						<label>Gender</label><br/>
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="gender" value="1" th:checked="${emp!=null}?${emp.gender==1}">
+							<input class="form-check-input" type="radio" name="gender" value="1" th:checked="${e!=null}?${e.gender==1}">
 							<label class="form-check-label">Female</label>
 						</div>
 						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="radio" name="gender" value="0" th:checked="${emp!=null}?${emp.gender==0}">
+							<input class="form-check-input" type="radio" name="gender" value="0" th:checked="${e!=null}?${e.gender==0}">
 							<label class="form-check-label">Male</label>
 						</div>
 					</div>
@@ -87,14 +90,14 @@
 						<label>Department</label>
 						<!--提交的是部门的id-->
 						<select class="form-control" name="department.id">
-							<option th:value="${dept.id}" th:each="dept:${depts}" th:text="${dept.getDepartmentName()}">1</option>
+							<option th:selected="${e!=null}?${dept.id==e.department.id}" th:value="${dept.id}" th:each="dept:${depts}" th:text="${dept.getDepartmentName()}">1</option>
 						</select>
 					</div>
 					<div class="form-group">
 						<label>Birth</label>
-						<input name="birth" type="text" class="form-control" placeholder="zhangsan" th:value="${emp!=null}?${#dates.format(emp.birth, 'yyyy-MM-dd HH:mm')}">
+						<input name="birth" type="text" class="form-control" placeholder="1986-08-13" th:value="${e!=null}?${#dates.format(e.birth,'yyyy-MM-dd HH:mm')}">
 					</div>
-					<button type="submit" class="btn btn-primary" th:text="${emp!=null}?'修改':'添加'">Add</button>
+					<button type="submit" class="btn btn-primary" th:text="${e!=null}?'Modify':'Add'">Add</button>
 					</form>
 				</main>
 			</div>
